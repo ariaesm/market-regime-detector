@@ -81,9 +81,9 @@ class RegimeForecaster:
 
         # Evaluation metrics
         acc = float(accuracy_score(y_test, y_pred))
-        macro_f1 = float(f1_score(y_test, y_pred, average="macro"))
+        macro_f1 = float(f1_score(y_test, y_pred, average="macro", zero_division=0))
         conf_mat = confusion_matrix(y_test, y_pred).tolist()
-        report = classification_report(y_test, y_pred, output_dict=True)
+        report = classification_report(y_test, y_pred, output_dict=True, zero_division=0)
 
         metrics = {
             "test_accuracy": acc,

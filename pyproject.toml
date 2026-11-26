@@ -51,6 +51,9 @@ test = [
 [project.scripts]
 market-regime = "market_regime.cli:main"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/market_regime"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
